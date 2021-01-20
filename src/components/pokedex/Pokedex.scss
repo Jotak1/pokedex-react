@@ -1,0 +1,38 @@
+#pokegallery{
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.search{
+    width: 100%;
+    text-align: center;
+}
+.card{
+    margin:auto;
+    width: 10rem;
+    height: 15rem;
+    background-color: white;
+    
+    margin: 10px;
+    text-align: center;
+    
+}
+.num {
+    display: inline;
+}
+.name{
+    display: inline;
+}
+
+
+
+  
+ 
+  .types{
+      text-align: center;
+      display: block;
+      margin: 10px;
+      border: solid 1px;
+      border-radius: 10px;
+  }

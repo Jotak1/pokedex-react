@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
 
 function sFunction() {
     var input, filter, myItems, cards, i, current, h5, text;
@@ -18,12 +22,19 @@ function sFunction() {
         }
     }
 }
-class Search extends Component{
+
+export function sFunctype(tipo){
      
-      
+    console.log(tipo);   
+    document.getElementById("searchinput").value= tipo;
+    sFunction();
+} 
+class Search extends Component{
+
+    
 
     render(){
-        return (<input type="text" id="searchinput" onKeyUp={sFunction} placeholder="Search for names.." />
+        return (<TextField  type="text" id="searchinput" onKeyUp={sFunction} label="Search for names.." />
         );
     }
 }

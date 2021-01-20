@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import Search from '../common/search/Search';
-import './Pokedex.css'
+import Search, { sFunctype } from '../common/search/Search';
+import './Pokedex.scss'
+import getTypeColor from '../common/color/Colortype';
 
 function Pokedex() {
     const [result, setResult] = React.useState([]);
@@ -10,7 +11,7 @@ function Pokedex() {
 
     
     useEffect(() => {
-      fetch('https://pokeapi.co/api/v2/pokemon/?limit=50')
+      fetch('https://pokeapi.co/api/v2/pokemon/?limit=150')
       .then((response) => response.json())
       .then((data) => setResult(
       data.results.map((item) => {
@@ -24,37 +25,49 @@ function Pokedex() {
 
     setTimeout(() => {
     setLoad(false);
-    }, 1000);
+    }, 2000);
 
     
-
-
+    
+    
     return (
         <div className="App">
+            
             <div className='search'>
             <Search/>
             </div>
-            <div className='pokegallery' id='pokegallery'>
-            
+            {/* <button value='fire' id='prueba' onClick={sFunctype}>tipo</button> */}
+            <div className='pokegallery'  id="pokegallery" >
+                            
                 { load ? (
                     <p  >Loading...</p>
                     ) : (
                         
                     poke.map((img, i) => (
                         
-                        <div id={img.id} key={img.id} className='card'>
+                        <div id={img.id} key={img.id} className='card' >
                             <div  >
                             <img  src={img.sprites.front_default} alt='pokemon' />
                             <div >
-                            <h5 className='name'>{img.name}</h5>
-                            <h6>id:{img.id}</h6>
+                            <h5 className='num' >N°</h5>
+                            <div className='name'>{img.id} {img.name} 
+                                 <div className='types' value={img.types[0].type.name} style={{background: getTypeColor(img.types[0].type.name)}} onClick={()=> sFunctype(img.types[0].type.name)} >   {img.types[0].type.name}</div> 
+                                 { img.types[1] &&
+                                     <div className='types' style={{background: getTypeColor(img.types[1].type.name)}}>  {img.types[1].type.name} </div>
+                                 }
+                                 
+                            </div>
+                            
                             </div>
                             </div>
                         </div>
+                                               
                         
                 ))
                 )}
+                
             </div>
+        
         </div>
     );
     }

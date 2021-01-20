@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
-import './index.css';
+import './index.scss';
 
 
 import Router from './Router';
