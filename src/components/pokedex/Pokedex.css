@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     
 }
+.search{
+    width: 100%;
+    text-align: center;
+}
 .card{
     margin:auto;
     width: 10rem;
