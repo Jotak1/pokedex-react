@@ -40,27 +40,38 @@ function Pokedex() {
             <div className='pokegallery'  id="pokegallery" >
                             
                 { load ? (
-                    <p  >Loading...</p>
+                    <div className='Loading'>
+                        <p className="image-holder">
+                    <img src='./assets/img/pokeloading.gif' alt='Loading' />
+                    </p>
+                    </div>
                     ) : (
                         
                     poke.map((img, i) => (
                         
                         <div id={img.id} key={img.id} className='card' >
-                            <div  >
+                            <div class="flip-container">
+                            <div class="flipper">
+                            <div  class="front" >
                             <img  src={img.sprites.front_default} alt='pokemon' />
-                            <div >
+                            </div>
+                            <div class="back">
+                            <img  src={img.sprites.back_default} alt='pokemon' />
+                            </div>
+                            </div>
+                            </div>
                             <h5 className='num' >N°</h5>
                             <div className='name'>{img.id} {img.name} 
-                                 <div className='types' value={img.types[0].type.name} style={{background: getTypeColor(img.types[0].type.name)}} onClick={()=> sFunctype(img.types[0].type.name)} >   {img.types[0].type.name}</div> 
+                                 <div className='types'  style={{background: getTypeColor(img.types[0].type.name)}} onClick={()=> sFunctype(img.types[0].type.name)} >   {img.types[0].type.name}</div> 
                                  { img.types[1] &&
-                                     <div className='types' style={{background: getTypeColor(img.types[1].type.name)}}>  {img.types[1].type.name} </div>
+                                     <div className='types' style={{background: getTypeColor(img.types[1].type.name)}} onClick={()=> sFunctype(img.types[1].type.name)}>  {img.types[1].type.name} </div>
                                  }
                                  
                             </div>
                             
                             </div>
-                            </div>
-                        </div>
+                            
+                        
                                                
                         
                 ))

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
 import TextField from '@material-ui/core/TextField';
 
 
@@ -34,7 +34,9 @@ class Search extends Component{
     
 
     render(){
-        return (<TextField  type="text" id="searchinput" onKeyUp={sFunction} label="Search for names.." />
+        return (<TextField  InputLabelProps={{
+            shrink: true,
+          }} type="text" id="searchinput" onKeyUp={sFunction} label="Search for names, ID or Types.." />
         );
     }
 }
