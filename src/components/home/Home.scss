@@ -1,4 +1,35 @@
-p{
-    color: black;
+.Home{
+    display: flex;
     
+    flex-flow: column;
+    justify-content: center;
+    .title{
+    margin: auto;
+    margin-top: 10px;
+    
+    .titletext{
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        margin: auto;
+        margin-top: 10px;
+    }
+    }
+
+    .Image{
+        margin: auto;
+        justify-content: center;
+        
+        .img{
+            max-width: 300px;
+            
+        }
+    }
+    .buttongoto{
+        margin: auto;
+        justify-content: center;
+        Button{
+           text-align: center;
+        }
+    }
 }

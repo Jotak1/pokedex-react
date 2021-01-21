@@ -11,16 +11,15 @@ let contador= 0
 export default function getTypeColor(type) {
     if (type) {
         const Color = ColorVar;
-        contador += 1
-        if (contador === 1) {
-        color1 = Color[type];
-        }
-        if (contador === 2) {
-        color2 = Color[type];
-        backgroundColor1 = color1;
-        backgroundColor2 = `linear-gradient(135deg, #${color1} 20%, #${color2} 80%)`;
-        
-        }
+        // contador += 1
+        // if (contador === 1) {
+        // color1 = Color[type];
+        // // }
+        // if (contador === 2) {
+        // color2 = Color[type];
+        // backgroundColor1 = color1;
+        // backgroundColor2 = `linear-gradient(135deg, #${color1} 20%, #${color2} 80%)`;
+        // }
         return '#' + Color[type];
     }
 }
