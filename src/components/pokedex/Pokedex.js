@@ -23,11 +23,9 @@ function Pokedex() {
     
    
     const handleClickOpen = i => {
-        
-
-        console.log(i); 
-        setValor(poke[i])
-        
+         
+        let a = poke[i]
+        setValor(a)
         setOpen(true);
         
       };

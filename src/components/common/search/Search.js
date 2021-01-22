@@ -24,8 +24,7 @@ function sFunction() {
 }
 
 export function sFunctype(tipo){
-     
-    console.log(tipo);   
+        
     document.getElementById("searchinput").value= tipo;
     sFunction();
 } 
