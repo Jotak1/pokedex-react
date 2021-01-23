@@ -3,9 +3,6 @@ import './Home.scss'
 import Button from '@material-ui/core/Button';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 class Home extends Component{
-    
-   
-
     render(){
         return (
             <div className='Home'>

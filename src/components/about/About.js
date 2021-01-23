@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-
+import './About.scss'
 class About extends Component{
     render(){
         return (
-            <div>
-                <p>About works!</p>
+            <div className='About'>
+                <div className='title'>
+                    <p className='titletext' >About</p>
+                </div>
             </div>
         );
     }

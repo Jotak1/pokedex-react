@@ -21,20 +21,15 @@ function Pokedex() {
     const arr = [];
     const [valor, setValor] = React.useState([]);
     
-   
-    const handleClickOpen = i => {
-         
+    const handleClickOpen = i => { 
         let a = poke[i]
         setValor(a)
-        setOpen(true);
-        
+        setOpen(true); 
       };
-    
       const handleClose = () => {
         setOpen(false);
       };
-
-    
+  
     useEffect(() => {
       fetch('https://pokeapi.co/api/v2/pokemon/?limit=150')
       .then((response) => response.json())
@@ -51,29 +46,23 @@ function Pokedex() {
     setTimeout(() => {
     setLoad(false);
     }, 2000);
-
-    
-    
     
     return (
         <div className="App">
-            
             <div className='search'>
             <Search/>
-            </div>
-            
+            </div>          
             <div className='pokegallery'  id="pokegallery" >
                             
                 { load ? (
                     <div className='Loading'>
                         <p className="image-holder">
-                    <img src='./assets/img/pokeloading.gif' alt='Loading' />
-                    </p>
+                        <img src='./assets/img/pokeloading.gif' alt='Loading' />
+                        </p>
                     </div>
                     ) : (
                         
                     poke.map((img, i) => (
-                        
                         <div id={img.id} key={img.id} className='card' >
                             <div className="flip-container"  onClick={() => handleClickOpen(i)}>
                                 <div className="flipper">
@@ -90,18 +79,10 @@ function Pokedex() {
                                  <div className='types'  style={{background: getTypeColor(img.types[0].type.name)}} onClick={()=> sFunctype(img.types[0].type.name)} >   {img.types[0].type.name}</div> 
                                  { img.types[1] &&
                                      <div className='types' style={{background: getTypeColor(img.types[1].type.name)}} onClick={()=> sFunctype(img.types[1].type.name)}>  {img.types[1].type.name} </div>
-                                 }
-                                 
+                                 }  
                             </div>
-                            
-                            </div>
-                            
-                        
-                                               
-                        
-                ))
-                )}
-                
+                            </div>      
+                )))}   
             </div>
         
             <Dialog
@@ -109,30 +90,23 @@ function Pokedex() {
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="max-width-dialog-title"
-                
-                    PaperProps={{
-                        style: {
-                        backgroundColor: 'transparent',
-                        boxShadow: 'none',
-                        },
-                    }}
-            >
+                PaperProps={{
+                    style: {
+                    backgroundColor: 'transparent',
+                    boxShadow: 'none',
+                    },
+                }}>
                 <DialogTitle id="max-width-dialog-title">
                     <DialogActions>
-                    <Button onClick={handleClose} variant="contained" color="primary">
-                    <CloseIcon/>
-                    </Button>
+                        <Button onClick={handleClose} variant="contained" color="primary">
+                            <CloseIcon/>
+                        </Button>
                     </DialogActions>
-                    </DialogTitle>
+                </DialogTitle>
                 <DialogContent>
-                
-                <Pokemon Pokedetail={valor} />
-               
+                    <Pokemon Pokedetail={valor} />
                 </DialogContent>
-                
             </Dialog>
-
         </div>
-    );
-    }
+    );}
 export default Pokedex;
