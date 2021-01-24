@@ -53,13 +53,13 @@ export default function Appbar() {
     >
       <List>
         
-          <ListItemLink href="/home" >
+          <ListItemLink href="/pokedex-react/home" >
             <ListItemText primary='Home'></ListItemText>
           </ListItemLink>
-          <ListItemLink href='/pokedex'  >
+          <ListItemLink href='/pokedex-react/pokedex'  >
             <ListItemText primary='Pokedex' />
           </ListItemLink>
-          <ListItemLink href="/about" >
+          <ListItemLink href="/pokedex-react/about" >
             <ListItemText  primary='About' />
           </ListItemLink>
         

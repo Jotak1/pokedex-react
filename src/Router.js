@@ -8,11 +8,10 @@ import Pokedex from './components/pokedex/Pokedex'
 const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/home' component={Home} />
-            <Route path='/about' component={About}/>
-            <Route path='/pokedex' component={Pokedex}/>
-            <Route path='/pokemon/:id' component={Pokedex}/>
+            <Route exact path='/pokedex-react' component={Home} />
+            <Route path='/pokedex-react/home' component={Home} />
+            <Route path='/pokedex-react/about' component={About}/>
+            <Route path='/pokedex-react/pokedex' component={Pokedex}/>
             <Route component={NotFound}/>
         </Switch>
     </BrowserRouter>

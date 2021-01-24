@@ -10,7 +10,7 @@ export function getBackcolor(props) {
           if(props.Pokedetail.types[1]){
         let color1  = getTypeColor(props.Pokedetail.types[0].type.name);
         let color2 = getTypeColor(props.Pokedetail.types[1].type.name); 
-        let BackStyle =  `linear-gradient(45deg, ${color1} 50%, ${color2} 0%)`;
+        let BackStyle =  `linear-gradient(90deg, ${color1} 50%, ${color2} 50%)`;
         return BackStyle;   
     }
     else{

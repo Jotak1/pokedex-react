@@ -35,7 +35,7 @@ class Search extends Component{
     render(){
         return (<TextField  InputLabelProps={{
             shrink: true,
-          }} type="text" id="searchinput" onKeyUp={sFunction} label="Search for Names, ID or Types.." />
+          }} variant="outlined" type="text" id="searchinput" onKeyUp={sFunction} label="Search for Names, ID or Types.." />
         );
     }
 }
