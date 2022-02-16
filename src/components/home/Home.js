@@ -13,7 +13,7 @@ class Home extends Component{
                     <img className='img' src="./assets/img/pikachuphone.gif" alt="Pikachu"/>
                 </div>
                 <div className='buttongoto'>
-                    <Button variant="contained" color="primary" href="/pokedex-react" endIcon={ <ArrowForwardIosIcon/> }>
+                    <Button variant="contained" color="primary" href="/pokedex-react/pokedex" endIcon={ <ArrowForwardIosIcon/> }>
                         Go to Pokedex 
                     </Button>
                 </div>
